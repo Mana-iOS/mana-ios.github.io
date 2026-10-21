@@ -1,8 +1,8 @@
 # Forms, preferences and setup
 
-Types: [Form](DataModel.md#form)
+Types: [Form](data-model.md#form)
 
-A `Form` describes a native settings screen. Sources use it for their settings (`getPreferenceMenu`) and first-run setup (`getSetupMenu`); trackers use it for the entry editor (`getEntryForm`, see [Trackers](Trackers.md#entry-form)).
+A `Form` describes a native settings screen. Sources use it for their settings (`getPreferenceMenu`) and first-run setup (`getSetupMenu`); trackers use it for the entry editor (`getEntryForm`, see [Trackers](trackers.md#entry-form)).
 
 ```mermaid
 classDiagram

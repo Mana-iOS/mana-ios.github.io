@@ -1,6 +1,6 @@
 # Events and sync
 
-Types: [ContentProgressState](DataModel.md#contentprogressstate), [DeepLinkContext](DataModel.md#deeplinkcontext)
+Types: [ContentProgressState](data-model.md#contentprogressstate), [DeepLinkContext](data-model.md#deeplinkcontext)
 
 These methods let a source mirror what the user does in Mana back to the site, and pull the site's state into Mana.
 

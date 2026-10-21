@@ -1,6 +1,6 @@
 # Authentication
 
-Types: [User](DataModel.md#user), [BasicURL / OAuthURL](DataModel.md#urls)
+Types: [User](data-model.md#user), [BasicURL / OAuthURL](data-model.md#urls)
 
 Every sign-in style needs both of these:
 
@@ -34,7 +34,7 @@ Then implement exactly one style. If a source has several, only the first is off
 | Username/email and password | `handleBasicAuth` | Not used yet |
 | Web login | `getWebAuthRequestURL`, `didReceiveSessionCookieFromWebAuthResponse` | Not used yet |
 
-Store tokens in [`SecureStore`](Storage.md), and attach them with a [request interceptor](Networking.md#interceptors) so every request is signed.
+Store tokens in [`SecureStore`](storage.md), and attach them with a [request interceptor](networking.md#interceptors) so every request is signed.
 
 ## OAuth
 

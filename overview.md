@@ -1,6 +1,6 @@
 # Building sources
 
-A source is a small TypeScript project that Mana loads to browse, search and read from one website. Types come from [`@mana-app/types`](https://github.com/Mana-iOS/mana-types); sources are built with [`mana-dev`](https://www.npmjs.com/package/@mana-app/dev). Start with [Getting started](GettingStarted.md).
+A source is a small TypeScript project that Mana loads to browse, search and read from one website. Types come from [`@mana-app/types`](https://github.com/Mana-iOS/mana-types); sources are built with [`mana-dev`](https://www.npmjs.com/package/@mana-app/dev). Start with [Getting started](getting-started.md).
 
 ## How Mana talks to a source
 
@@ -46,7 +46,7 @@ flowchart LR
 
 ## Features are opt-in
 
-Mana only offers a feature when your class has the methods behind it. The build detects them, so rebuild after adding or removing a method. Some features need a pair of methods. A few methods are not called by Mana yet; see [API status](Status.md).
+Mana only offers a feature when your class has the methods behind it. The build detects them, so rebuild after adding or removing a method. Some features need a pair of methods. A few methods are not called by Mana yet; see [API status](status.md).
 
 | Feature | Methods |
 |---|---|
@@ -63,7 +63,7 @@ Mana only offers a feature when your class has the methods behind it. The build 
 | Deep links | `handleURL` with `config.owningLinks` |
 | Custom image loading | `getCoverTransport`, `getPageTransport` |
 | Tile descrambling | `shouldRedrawImage` **and** `redrawImageWithSize` |
-| Tracker | `getContent`, `search`, `didUpdateLastReadChapter`, `didUpdateStatus`, `getEntryForm`, `didSubmitEntryForm` (see [Trackers](Trackers.md)) |
+| Tracker | `getContent`, `search`, `didUpdateLastReadChapter`, `didUpdateStatus`, `getEntryForm`, `didSubmitEntryForm` (see [Trackers](trackers.md)) |
 
 ## Smallest useful source
 

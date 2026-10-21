@@ -1,10 +1,10 @@
 # Trackers
 
-Types: [TrackEntry](DataModel.md#tracker), [Form](DataModel.md#form)
+Types: [TrackEntry](data-model.md#tracker), [Form](data-model.md#form)
 
 A tracker syncs reading progress to a service such as AniList, MyAnimeList or Kitsu. It is a source without chapters: it searches and shows titles, and keeps the user's list entry up to date.
 
-The build treats a class as a tracker when it has all of `getContent`, `search`, `didUpdateLastReadChapter`, `didUpdateStatus`, `getEntryForm` and `didSubmitEntryForm`. Trackers sign in with [OAuth](Authentication.md#oauth).
+The build treats a class as a tracker when it has all of `getContent`, `search`, `didUpdateLastReadChapter`, `didUpdateStatus`, `getEntryForm` and `didSubmitEntryForm`. Trackers sign in with [OAuth](authentication.md#oauth).
 
 ```mermaid
 sequenceDiagram
@@ -114,7 +114,7 @@ async removeTracking(id: string): Promise<void> {
 
 ### Entry form
 
-`getEntryForm` builds the editor with [form elements](Forms.md#elements). `didSubmitEntryForm` receives only the fields the user changed; cleared fields are `null` and dates are ISO 8601 strings.
+`getEntryForm` builds the editor with [form elements](forms.md#elements). `didSubmitEntryForm` receives only the fields the user changed; cleared fields are `null` and dates are ISO 8601 strings.
 
 ```ts
 import { UIDatePicker, UIListSection, UIPicker, UIStepper, UITextField, UIToggle, type Form } from "@mana-app/types";

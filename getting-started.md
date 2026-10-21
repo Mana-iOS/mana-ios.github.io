@@ -44,7 +44,7 @@ export class Target implements ChapterSource, SearchProvider, SourcePreferencePr
 }
 ```
 
-`implements` clauses only help TypeScript. What counts is which methods exist on the instance; see [Features are opt-in](Overview.md#features-are-opt-in).
+`implements` clauses only help TypeScript. What counts is which methods exist on the instance; see [Features are opt-in](overview.md#features-are-opt-in).
 
 ## `info`
 
@@ -80,7 +80,7 @@ const config: SourceConfig = {
 };
 ```
 
-With `allowsMultipleInstances`, each instance gets its own `info.id`, settings and storage, so a self-hosted server source can point each instance at a different URL (see [setup](Forms.md#first-run-setup)).
+With `allowsMultipleInstances`, each instance gets its own `info.id`, settings and storage, so a self-hosted server source can point each instance at a different URL (see [setup](forms.md#first-run-setup)).
 
 ## Runtime
 
@@ -88,9 +88,9 @@ With `allowsMultipleInstances`, each instance gets its own `info.id`, settings a
 |---|---|
 | ES2020+ JavaScript, `Promise`, `async`/`await`, typed arrays | DOM, `window`, `document` |
 | `console`, timers, `AbortController` | `fetch`, `XMLHttpRequest`, `WebSocket` |
-| `HttpClient` ([Networking](Networking.md)) | `TextEncoder`, `TextDecoder`, `btoa` |
-| `ObjectStore`, `SecureStore` ([Storage](Storage.md)) | File system, `child_process`, other Node modules |
-| `WebViewPage` ([WebView pages](WebView.md)) | |
+| `HttpClient` ([Networking](networking.md)) | `TextEncoder`, `TextDecoder`, `btoa` |
+| `ObjectStore`, `SecureStore` ([Storage](storage.md)) | File system, `child_process`, other Node modules |
+| `WebViewPage` ([WebView pages](webview.md)) | |
 | `moment` (global, 2.30) | |
 | Added by `mana-dev`: `Buffer`, `URL`, `URLSearchParams`, `atob`, `process.env`, `EventEmitter`, and the `buffer`, `events`, `path`, `util` modules | |
 

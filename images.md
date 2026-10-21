@@ -1,6 +1,6 @@
 # Images
 
-Types: [ImageRequest](DataModel.md#networking), [RedrawWithSizeCommand](DataModel.md#redraw)
+Types: [ImageRequest](data-model.md#networking), [RedrawWithSizeCommand](data-model.md#redraw)
 
 By default Mana downloads cover and page URLs itself, without calling your source. Add a transport when images need headers, cookies, a rate limit or decryption.
 
@@ -67,7 +67,7 @@ getPageTransport(request: ImageRequest): HttpClient {
 }
 ```
 
-Images are cached by URL. If one URL can produce different images, put the distinguishing value in the URL (a query or [fragment](Networking.md#fragment-parameters)).
+Images are cached by URL. If one URL can produce different images, put the distinguishing value in the URL (a query or [fragment](networking.md#fragment-parameters)).
 
 ## Decrypting or changing images
 
@@ -102,7 +102,7 @@ this.http.addResponseInterceptor(async (response, context) => {
 });
 ```
 
-See [Crypto](Crypto.md) for all ciphers.
+See [Crypto](crypto.md) for all ciphers.
 
 ## Where the bytes go
 
@@ -229,7 +229,7 @@ sequenceDiagram
 
 ### Reading and replacing bytes
 
-Calling `response.bytes()` copies the image into JavaScript (a `Uint8Array`; base64 text under WebKit). Returning `withBody(newBytes)` copies the result back once. Use this only when no [native cipher](Crypto.md) fits.
+Calling `response.bytes()` copies the image into JavaScript (a `Uint8Array`; base64 text under WebKit). Returning `withBody(newBytes)` copies the result back once. Use this only when no [native cipher](crypto.md) fits.
 
 ```mermaid
 sequenceDiagram

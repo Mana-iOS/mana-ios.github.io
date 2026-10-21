@@ -1,6 +1,6 @@
 # Networking
 
-Types: [HttpClient types](DataModel.md#networking)
+Types: [HttpClient types](data-model.md#networking)
 
 `HttpClient` from `@mana-app/types` is the only way to make requests. It shares Mana's cookies and user agent, handles Cloudflare, and its requests are cancelled when Mana cancels the method that started them.
 
@@ -128,7 +128,7 @@ const series = await (await this.http.get(`/series/${id}`)).requireOk().json<Ser
 
 Read bodies before your method returns. After that the response can no longer be read; values you already parsed stay valid.
 
-Make a modified copy with `withBody`, or decrypt one with [`decrypt`](Crypto.md):
+Make a modified copy with `withBody`, or decrypt one with [`decrypt`](crypto.md):
 
 ```ts
 const patched = response.withBody(fixedHtml, { contentType: "text/html" });
@@ -136,7 +136,7 @@ const patched = response.withBody(fixedHtml, { contentType: "text/html" });
 
 ## Interceptors
 
-Interceptors run on every request of the client, including [image requests](Images.md).
+Interceptors run on every request of the client, including [image requests](images.md).
 
 ```ts
 import { RequestOrigin } from "@mana-app/types";

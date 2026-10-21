@@ -1,6 +1,6 @@
 # Pages and links
 
-Types: [PageSection](DataModel.md#pagesection), [Linkable](DataModel.md#linkable), [PageLinkLabel](DataModel.md#pagelinklabel), [Highlight](DataModel.md#highlight)
+Types: [PageSection](data-model.md#pagesection), [Linkable](data-model.md#linkable), [PageLinkLabel](data-model.md#pagelinklabel), [Highlight](data-model.md#highlight)
 
 A source can build its own pages, such as a home screen with "Popular" and "Latest" rows, instead of a plain search grid. Every page is identified by a `PageLink`; the home page is `{ id: "home" }`.
 

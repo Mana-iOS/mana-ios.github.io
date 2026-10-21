@@ -1,6 +1,6 @@
 # Search
 
-Types: [SearchRequest](DataModel.md#searchrequest), [PagedSearchResult](DataModel.md#pagedsearchresult), [Highlight](DataModel.md#highlight), [SearchForm](DataModel.md#searchform)
+Types: [SearchRequest](data-model.md#searchrequest), [PagedSearchResult](data-model.md#pagedsearchresult), [Highlight](data-model.md#highlight), [SearchForm](data-model.md#searchform)
 
 ```mermaid
 sequenceDiagram
@@ -71,7 +71,7 @@ async search(request: SearchRequest): Promise<PagedSearchResult> {
 - `page` starts at 1.
 - `filters` is keyed by field `id` and only contains fields the user set.
 - Option fields send option **IDs**: a string for `SELECT`, a string array for `MULTISELECT`, and `{ included: string[], excluded: string[] }` for `EXCLUDABLE_MULTISELECT`.
-- `listId` is set when the user opened a list from a [link](Pages.md#linkable) whose request carries one.
+- `listId` is set when the user opened a list from a [link](pages.md#linkable) whose request carries one.
 - `request.context.allowedContentRatings` lists the ratings the user allows.
 
 The same method backs browsing: a tag tap or a "view more" link calls `search` with prefilled `filters` or `sort`.

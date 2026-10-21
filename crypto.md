@@ -1,6 +1,6 @@
 # Crypto
 
-Types: [CipherSpec](DataModel.md#crypto)
+Types: [CipherSpec](data-model.md#crypto)
 
 Mana decrypts for you, quickly, including large images. There are two entry points:
 

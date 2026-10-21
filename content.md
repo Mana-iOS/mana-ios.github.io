@@ -1,6 +1,6 @@
 # Content and chapters
 
-Types: [Content](DataModel.md#content), [Chapter](DataModel.md#chapter), [ChapterData](DataModel.md#chapterdata)
+Types: [Content](data-model.md#content), [Chapter](data-model.md#chapter), [ChapterData](data-model.md#chapterdata)
 
 ```mermaid
 sequenceDiagram
@@ -136,7 +136,7 @@ const allowed = context?.allowedContentRatings ?? [ContentRating.SAFE];
 const nsfw = allowed.includes(ContentRating.EXPLICIT);
 ```
 
-`trackerInfo` links the title to [trackers](Trackers.md). Keys are tracker link keys (for example `anilist`, `mal`); values are that tracker's IDs.
+`trackerInfo` links the title to [trackers](trackers.md). Keys are tracker link keys (for example `anilist`, `mal`); values are that tracker's IDs.
 
 ### Chapters inside `Content`
 
@@ -246,7 +246,7 @@ async getChapterData(contentId: string, chapterId: string): Promise<ChapterData>
 }
 ```
 
-Images need headers, cookies or decryption? Implement [`getPageTransport`](Images.md).
+Images need headers, cookies or decryption? Implement [`getPageTransport`](images.md).
 
 ### Inline images
 

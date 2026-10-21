@@ -6,21 +6,21 @@ Which parts of the source API Mana uses today. Everything not listed here is use
 
 | Area | Methods / properties | Notes |
 |---|---|---|
-| [First-run setup](Forms.md#first-run-setup) | `getSetupMenu`, `validateSetupForm`, `isSourceSetup` | Mana shows no setup forms. |
-| [Password sign-in](Authentication.md#username-or-email-and-password) | `handleBasicAuth`, `BasicAuthenticationUIIdentifier` | Only OAuth is offered, for sources and trackers. |
-| [Web sign-in](Authentication.md#web-login) | `getWebAuthRequestURL`, `didReceiveSessionCookieFromWebAuthResponse` | Only OAuth is offered. |
-| [Marking chapters](Events.md#reading-events) | `onChaptersMarked` | Never called, but still required for reading events (see below). |
-| [Library events](Events.md#library-events) | `onContentsAddedToLibrary`, `onContentsRemovedFromLibrary` | Adding or removing titles does not notify the source. |
-| [Library links](Pages.md#getlibrarypagelinks) | `getLibraryPageLinks` | The links are not shown anywhere. |
-| [Library sync](Events.md#library-sync-and-grouped-updates) | `syncUserLibrary`, `getGroupedUpdates` | Library updates check titles one by one. |
-| [Extra profile sections](Content.md#extra-profile-sections) | `getAdditionalInfoSectionItems` | Sections show only the items in `Content.additionalInfo`; `hasMore` has no effect. |
+| [First-run setup](forms.md#first-run-setup) | `getSetupMenu`, `validateSetupForm`, `isSourceSetup` | Mana shows no setup forms. |
+| [Password sign-in](authentication.md#username-or-email-and-password) | `handleBasicAuth`, `BasicAuthenticationUIIdentifier` | Only OAuth is offered, for sources and trackers. |
+| [Web sign-in](authentication.md#web-login) | `getWebAuthRequestURL`, `didReceiveSessionCookieFromWebAuthResponse` | Only OAuth is offered. |
+| [Marking chapters](events.md#reading-events) | `onChaptersMarked` | Never called, but still required for reading events (see below). |
+| [Library events](events.md#library-events) | `onContentsAddedToLibrary`, `onContentsRemovedFromLibrary` | Adding or removing titles does not notify the source. |
+| [Library links](pages.md#getlibrarypagelinks) | `getLibraryPageLinks` | The links are not shown anywhere. |
+| [Library sync](events.md#library-sync-and-grouped-updates) | `syncUserLibrary`, `getGroupedUpdates` | Library updates check titles one by one. |
+| [Extra profile sections](content.md#extra-profile-sections) | `getAdditionalInfoSectionItems` | Sections show only the items in `Content.additionalInfo`; `hasMore` has no effect. |
 
 ## Partly used
 
 | Method | What Mana uses | What it ignores |
 |---|---|---|
-| [`onChapterRead`, `onPageRead`](Events.md#reading-events) | Calls from the book reader (EPUB, PDF, text) | The image reader does not send reading events. |
-| [`getProgressState`](Events.md#progress-sync) | `readChapterIds`, during library updates | `currentReadingState`, `markAllBelowAsRead` |
+| [`onChapterRead`, `onPageRead`](events.md#reading-events) | Calls from the book reader (EPUB, PDF, text) | The image reader does not send reading events. |
+| [`getProgressState`](events.md#progress-sync) | `readChapterIds`, during library updates | `currentReadingState`, `markAllBelowAsRead` |
 
 ## Things to watch for
 

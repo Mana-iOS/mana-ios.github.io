@@ -10,46 +10,46 @@ export default defineConfig({
   sitemap: { hostname: "https://mana-ios.github.io" },
 
   themeConfig: {
-    nav: [{ text: "Docs", link: "/Overview", activeMatch: "^/(?!$)" }],
+    nav: [{ text: "Docs", link: "/overview", activeMatch: "^/(?!$)" }],
 
     sidebar: [
       {
         text: "Introduction",
         items: [
-          { text: "Overview", link: "/Overview" },
-          { text: "Getting started", link: "/GettingStarted" },
+          { text: "Overview", link: "/overview" },
+          { text: "Getting started", link: "/getting-started" },
         ],
       },
       {
         text: "Sources",
         items: [
-          { text: "Content and chapters", link: "/Content" },
-          { text: "Search", link: "/Search" },
-          { text: "Pages and links", link: "/Pages" },
-          { text: "Forms, preferences and setup", link: "/Forms" },
-          { text: "Authentication", link: "/Authentication" },
-          { text: "Events and sync", link: "/Events" },
+          { text: "Content and chapters", link: "/content" },
+          { text: "Search", link: "/search" },
+          { text: "Pages and links", link: "/pages" },
+          { text: "Forms, preferences and setup", link: "/forms" },
+          { text: "Authentication", link: "/authentication" },
+          { text: "Events and sync", link: "/events" },
         ],
       },
       {
         text: "Runtime",
         items: [
-          { text: "Networking", link: "/Networking" },
-          { text: "Images", link: "/Images" },
-          { text: "Crypto", link: "/Crypto" },
-          { text: "Storage", link: "/Storage" },
-          { text: "WebView pages", link: "/WebView" },
+          { text: "Networking", link: "/networking" },
+          { text: "Images", link: "/images" },
+          { text: "Crypto", link: "/crypto" },
+          { text: "Storage", link: "/storage" },
+          { text: "WebView pages", link: "/webview" },
         ],
       },
       {
         text: "Trackers",
-        items: [{ text: "Trackers", link: "/Trackers" }],
+        items: [{ text: "Trackers", link: "/trackers" }],
       },
       {
         text: "Reference",
         items: [
-          { text: "Data model", link: "/DataModel" },
-          { text: "API status", link: "/Status" },
+          { text: "Data model", link: "/data-model" },
+          { text: "API status", link: "/status" },
         ],
       },
     ],

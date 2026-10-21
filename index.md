@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Build a source
-      link: /Overview
+      link: /overview
     - theme: alt
       text: Join the Discord
       link: https://discord.gg/g2mHBDCpWz

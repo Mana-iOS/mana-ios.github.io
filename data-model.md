@@ -191,7 +191,7 @@ type LinkItem       = { type; id: string; title: string; url: string };
 type TagItem        = { type } & Tag;
 ```
 
-Build them with `additionalInfo.staff.section(…)`, `additionalInfo.characters.item(…)` and so on ([example](Content.md#extra-profile-sections)).
+Build them with `additionalInfo.staff.section(…)`, `additionalInfo.characters.item(…)` and so on ([example](content.md#extra-profile-sections)).
 
 ### Chapter
 

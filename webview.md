@@ -1,6 +1,6 @@
 # WebView pages
 
-Types: [WebViewPage](DataModel.md#webviewpage)
+Types: [WebViewPage](data-model.md#webviewpage)
 
 `WebViewPage` is a hidden browser page. Use it when a site only works with its own JavaScript running: tokens computed in the page, content rendered client-side, or anti-bot scripts. Prefer `HttpClient` whenever an API or plain HTML works, since a page is much slower.
 
