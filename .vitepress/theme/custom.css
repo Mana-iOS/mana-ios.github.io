@@ -1,0 +1,275 @@
+/* Diagram-only tokens; the rest of the site keeps the default VitePress theme. */
+
+.mana-diagram {
+  --mana-sky: #0284c7;
+  --mana-violet: #7c3aed;
+  --mana-teal: #0d9488;
+  --mana-fuchsia: #c026d3;
+  --mana-amber: #d97706;
+  --mana-lime: #65a30d;
+  --mana-coral: #e11d48;
+  --mana-slate: #64748b;
+  --mana-cyan: var(--mana-sky);
+  --mana-grid: rgba(15, 23, 42, 0.05);
+  --mana-diagram-font: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.dark .mana-diagram {
+  --mana-sky: #38bdf8;
+  --mana-violet: #a78bfa;
+  --mana-teal: #2dd4bf;
+  --mana-fuchsia: #e879f9;
+  --mana-amber: #fbbf24;
+  --mana-lime: #a3e635;
+  --mana-coral: #fb7185;
+  --mana-slate: #94a3b8;
+}
+
+/* Blueprint diagram card */
+
+.mana-diagram {
+  position: relative;
+  margin: 28px 0;
+  padding: 22px 22px 18px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 16px;
+  background:
+    linear-gradient(var(--mana-grid) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(90deg, var(--mana-grid) 1px, transparent 1px) 0 0 / 24px 24px,
+    var(--mana-diagram-bg, var(--vp-c-bg-alt));
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--mana-cyan) 5%, transparent) inset;
+  overflow: hidden;
+}
+
+.dark .mana-diagram {
+  --mana-diagram-bg: #0c1220;
+  --mana-grid: rgba(148, 163, 184, 0.07);
+  box-shadow:
+    0 0 0 1px rgba(86, 212, 240, 0.05) inset,
+    0 24px 60px -40px rgba(86, 212, 240, 0.35);
+}
+
+.mana-diagram.is-loading {
+  min-height: 200px;
+}
+
+.mana-diagram.is-loading::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 30%, color-mix(in srgb, var(--mana-cyan) 8%, transparent) 50%, transparent 70%) 0 0 / 200% 100%;
+  animation: mana-diagram-shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes mana-diagram-shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* Header */
+
+.mana-diagram__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 0 40px 18px 0;
+  font-family: var(--mana-diagram-font);
+}
+
+.mana-diagram__dot {
+  flex: none;
+  width: 9px;
+  height: 9px;
+  margin-top: 6px;
+  border-radius: 50%;
+  background: var(--mana-cyan);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--mana-cyan) 18%, transparent);
+}
+
+.mana-diagram__title {
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--vp-c-text-1);
+}
+
+.mana-diagram__subtitle {
+  margin-top: 2px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--vp-c-text-2);
+}
+
+/* Canvas */
+
+.mana-diagram__canvas {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  animation: mana-diagram-in 0.35s ease-out;
+}
+
+.mana-diagram__canvas svg {
+  height: auto;
+  max-width: 100%;
+}
+
+@keyframes mana-diagram-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+/* Mermaid measures labels outside the page; keep VitePress prose styles out of them. */
+.mana-diagram foreignObject p,
+.mana-diagram foreignObject div,
+.mana-diagram foreignObject span {
+  margin: 0;
+  line-height: 1.5;
+  font-size: inherit;
+}
+
+.mana-diagram__error {
+  margin: 0;
+  color: var(--vp-c-danger-1);
+  font-size: 13px;
+  white-space: pre-wrap;
+}
+
+/* Legend */
+
+.mana-diagram__legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 18px;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--vp-c-divider);
+  font-family: var(--mana-diagram-font);
+  font-size: 11.5px;
+  color: var(--vp-c-text-2);
+}
+
+.mana-diagram__legend-title {
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+}
+
+.mana-diagram__legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.mana-diagram__swatch {
+  width: 18px;
+  height: 11px;
+  border: 1.5px solid var(--swatch);
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--swatch) 16%, transparent);
+}
+
+.mana-diagram__swatch.is-mana { --swatch: var(--mana-sky); }
+.mana-diagram__swatch.is-source { --swatch: var(--mana-violet); }
+.mana-diagram__swatch.is-external { --swatch: var(--mana-teal); }
+.mana-diagram__swatch.is-good { --swatch: var(--mana-lime); }
+.mana-diagram__swatch.is-warn { --swatch: var(--mana-amber); }
+.mana-diagram__swatch.is-bad { --swatch: var(--mana-coral); }
+.mana-diagram__swatch.is-muted { --swatch: var(--mana-slate); }
+.mana-diagram__swatch.is-copy { --swatch: var(--mana-fuchsia); }
+.mana-diagram__swatch.is-type-primitive { --swatch: #005cc5; }
+.mana-diagram__swatch.is-type-named { --swatch: #6f42c1; }
+.mana-diagram__swatch.is-type-property { --swatch: #e36209; }
+.dark .mana-diagram__swatch.is-type-primitive { --swatch: #79b8ff; }
+.dark .mana-diagram__swatch.is-type-named { --swatch: #b392f0; }
+.dark .mana-diagram__swatch.is-type-property { --swatch: #ffab70; }
+
+/* Expand button and dialog */
+
+.mana-diagram__expand,
+.mana-diagram__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-2);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, opacity 0.2s;
+}
+
+.mana-diagram__expand {
+  opacity: 0.55;
+}
+
+.mana-diagram:hover .mana-diagram__expand,
+.mana-diagram__expand:focus-visible {
+  opacity: 1;
+}
+
+.mana-diagram__expand:hover,
+.mana-diagram__close:hover {
+  color: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
+}
+
+.mana-diagram__dialog {
+  width: min(1240px, 94vw);
+  max-height: 90vh;
+  padding: 28px 32px 32px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 18px;
+  background:
+    linear-gradient(var(--mana-grid) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(90deg, var(--mana-grid) 1px, transparent 1px) 0 0 / 24px 24px,
+    var(--mana-diagram-bg, var(--vp-c-bg-alt));
+  box-shadow: var(--vp-shadow-5);
+}
+
+.dark .mana-diagram__dialog {
+  --mana-diagram-bg: #0c1220;
+}
+
+.mana-diagram__dialog::backdrop {
+  background: rgba(3, 6, 12, 0.7);
+  backdrop-filter: blur(6px);
+}
+
+.mana-diagram__canvas--large svg {
+  max-width: none;
+  min-width: min(100%, 900px);
+}
+
+/* Home tiles: iOS Settings-style icons, a white glyph on an Apple system colour. */
+
+.VPFeatures .item { --tile: #007aff; }                    /* Extensions: blue */
+.VPFeatures .item:nth-child(2) { --tile: #af52de; }       /* Theming: purple */
+.VPFeatures .item:nth-child(3) { --tile: #5856d6; }       /* Customization: indigo */
+.VPFeatures .item:nth-child(4) { --tile: #ff9500; }       /* Reader: orange */
+.VPFeatures .item:nth-child(5) { --tile: #34c759; }       /* Library: green */
+.VPFeatures .item:nth-child(6) { --tile: #32ade6; }       /* Search: cyan */
+.VPFeatures .item:nth-child(7) { --tile: #ff2d55; }       /* Migration: pink */
+.VPFeatures .item:nth-child(8) { --tile: #ff3b30; }       /* Trackers: red */
+.VPFeatures .item:nth-child(9) { --tile: #00c7be; }       /* Backups: mint */
+
+.VPFeature .icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  color: #fff;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--tile) 82%, #fff), var(--tile));
+  box-shadow: 0 6px 14px -8px var(--tile);
+}
+
+.VPFeature .icon svg {
+  width: 26px;
+  height: 26px;
+}
