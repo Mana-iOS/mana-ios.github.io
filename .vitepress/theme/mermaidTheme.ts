@@ -271,10 +271,10 @@ function themeCSS(p: Palette, ts: (typeof syntax)["dark"]): string {
       font-size: 12px !important; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
     }
     .nodeLabel small, .label small {
-      display: inline-block; margin-top: 2px;
-      font-size: 11px; font-weight: 400; opacity: 0.75;
+      font-size: 11px; font-weight: 400;
+      color: color-mix(in srgb, currentColor 75%, transparent);
     }
-    .nodeLabel code { font-family: inherit; font-size: 11px; opacity: 0.85; }
+    .nodeLabel code { font-family: inherit; font-size: 11px; color: color-mix(in srgb, currentColor 85%, transparent); }
 
     .node rect, .node polygon, .node circle, .node path { stroke-width: 1.6px; }
     .node rect { rx: 7px; ry: 7px; }
