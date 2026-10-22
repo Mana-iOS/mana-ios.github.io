@@ -55,6 +55,7 @@ const classes: { name: string; tone: ToneName; label: string }[] = [
   { name: "warn", tone: "amber", label: "Decision / wait" },
   { name: "bad", tone: "coral", label: "Error" },
   { name: "muted", tone: "slate", label: "Ignored" },
+  { name: "unused", tone: "slate", label: "Not used by Mana yet" },
   { name: "copy", tone: "fuchsia", label: "Bytes in JavaScript" },
 ];
 
@@ -278,6 +279,7 @@ function themeCSS(p: Palette, ts: (typeof syntax)["dark"]): string {
 
     .node rect, .node polygon, .node circle, .node path { stroke-width: 1.6px; }
     .node rect { rx: 7px; ry: 7px; }
+    .node.unused rect { stroke-dasharray: 5 4; }
     .node polygon { fill: ${amber.fill}; stroke: ${amber.border}; }
     .node:has(polygon) .nodeLabel { color: ${amber.text}; }
 

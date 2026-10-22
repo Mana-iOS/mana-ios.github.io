@@ -26,7 +26,6 @@ flowchart LR
         GC["getContent()"]
         GCH["getChapters()"]
         GCD["getChapterData()"]
-        GP["getProgressState()"]
         GPM["getPreferenceMenu()"]
     end
 
@@ -35,12 +34,12 @@ flowchart LR
     Profile --> GC
     Profile --> GCH
     Reader --> GCD
-    Library --> GP
+    Library --> GCH
     Settings --> GPM
     Source ==> Web[("Website / API<br/><small>via HttpClient</small>")]
 
     class App,Discover,SearchUI,Profile,Reader,Library,Settings mana
-    class Source,GS,S,GC,GCH,GCD,GP,GPM source
+    class Source,GS,S,GC,GCH,GCD,GPM source
     class Web external
 ```
 

@@ -179,6 +179,7 @@
 .mana-diagram__swatch.is-warn { --swatch: var(--mana-amber); }
 .mana-diagram__swatch.is-bad { --swatch: var(--mana-coral); }
 .mana-diagram__swatch.is-muted { --swatch: var(--mana-slate); }
+.mana-diagram__swatch.is-unused { --swatch: var(--mana-slate); border-style: dashed; }
 .mana-diagram__swatch.is-copy { --swatch: var(--mana-fuchsia); }
 .mana-diagram__swatch.is-type-primitive { --swatch: #005cc5; }
 .mana-diagram__swatch.is-type-named { --swatch: #6f42c1; }

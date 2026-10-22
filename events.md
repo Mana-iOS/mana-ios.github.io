@@ -28,14 +28,15 @@ flowchart LR
 
     R -->|finished chapter| OCR
     R -->|turned page| OPR
-    L -->|read / unread| OCM
-    L -->|added| OCA
-    L -->|removed| OCX
-    U -->|read on site?| GPS
+    L -.->|read / unread| OCM
+    L -.->|added| OCA
+    L -.->|removed| OCX
+    U -.->|read on site?| GPS
     Link --> HU
 
     class Mana,R,L,U,Link mana
-    class Source,OCR,OPR,OCM,OCA,OCX,GPS,HU source
+    class Source,OCR,OPR,HU source
+    class OCM,OCA,OCX,GPS unused
 ```
 
 | Method | Mana today |
@@ -43,7 +44,7 @@ flowchart LR
 | `onChapterRead`, `onPageRead` | ✓ (needs `onChaptersMarked` too, see below) |
 | `onChaptersMarked` | Required for chapter events, not called yet |
 | `onContentsAddedToLibrary`, `onContentsRemovedFromLibrary` | Not called yet |
-| `getProgressState` | ✓ during library updates |
+| `getProgressState` | Not called yet |
 | `handleURL` | ✓ |
 | `syncUserLibrary`, `getGroupedUpdates` | Not called yet |
 
@@ -86,7 +87,7 @@ async onContentsRemovedFromLibrary(ids: string[]): Promise<void> {
 
 ## Progress sync
 
-During library updates Mana asks which chapters the user already read on the site, and doesn't count those as new.
+> **Not called by Mana yet.** The method lets a source report which chapters the user already read on the site, so library updates could skip them.
 
 ```ts
 import type { ContentProgressState } from "@mana-app/types";
@@ -106,8 +107,6 @@ async getProgressState(contentId: string): Promise<ContentProgressState> {
   };
 }
 ```
-
-Mana currently uses `readChapterIds`; the other fields are part of the type for richer sync.
 
 ## Deep links
 

@@ -12,6 +12,7 @@ Which parts of the source API Mana uses today. Everything not listed here is use
 | [Marking chapters](events.md#reading-events) | `onChaptersMarked` | Never called, but still required for reading events (see below). |
 | [Library events](events.md#library-events) | `onContentsAddedToLibrary`, `onContentsRemovedFromLibrary` | Adding or removing titles does not notify the source. |
 | [Library links](pages.md#getlibrarypagelinks) | `getLibraryPageLinks` | The links are not shown anywhere. |
+| [Progress sync](events.md#progress-sync) | `getProgressState` | Library updates don't ask the source which chapters were read. |
 | [Library sync](events.md#library-sync-and-grouped-updates) | `syncUserLibrary`, `getGroupedUpdates` | Library updates check titles one by one. |
 | [Extra profile sections](content.md#extra-profile-sections) | `getAdditionalInfoSectionItems` | Sections show only the items in `Content.additionalInfo`; `hasMore` has no effect. |
 
@@ -20,7 +21,6 @@ Which parts of the source API Mana uses today. Everything not listed here is use
 | Method | What Mana uses | What it ignores |
 |---|---|---|
 | [`onChapterRead`, `onPageRead`](events.md#reading-events) | Calls from the book reader (EPUB, PDF, text) | The image reader does not send reading events. |
-| [`getProgressState`](events.md#progress-sync) | `readChapterIds`, during library updates | `currentReadingState`, `markAllBelowAsRead` |
 
 ## Things to watch for
 
